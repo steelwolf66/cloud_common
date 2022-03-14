@@ -1,4 +1,4 @@
-package com.ztax.common.constants;
+package com.ztax.common.result;
 
 public interface IResultCode {
 

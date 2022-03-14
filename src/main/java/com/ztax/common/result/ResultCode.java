@@ -1,10 +1,13 @@
-package com.ztax.common.constants;
+package com.ztax.common.result;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
+/**
+ * HTTP响应结果编码及信息
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 public enum ResultCode implements IResultCode, Serializable {
