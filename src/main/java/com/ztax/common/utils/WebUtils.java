@@ -3,7 +3,7 @@ package com.ztax.common.utils;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.ztax.common.constants.AuthConstants;
-import com.ztax.common.constants.ResultCode;
+import com.ztax.common.result.ResultCode;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.web.context.request.RequestContextHolder;
