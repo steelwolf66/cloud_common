@@ -15,7 +15,7 @@ public class ObjectUtils {
     }
 
     public static boolean isBlank(Object o) {
-        return o == null || o instanceof String && StringUtils.hasLength((String) o) || o instanceof Collection && ((Collection) o).isEmpty() || o instanceof Map && ((Map) o).isEmpty() || o.getClass().isArray() && Array.getLength(o) == 0;
+        return o == null || o instanceof String && !StringUtils.hasLength((String) o) || o instanceof Collection && ((Collection) o).isEmpty() || o instanceof Map && ((Map) o).isEmpty() || o.getClass().isArray() && Array.getLength(o) == 0;
     }
 
     public static boolean isNotBlank(Object o) {
