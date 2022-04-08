@@ -2,7 +2,6 @@ package com.ztax.common.utils;
 
 
 
-import org.springframework.util.StringUtils;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.InvocationTargetException;
@@ -10,18 +9,17 @@ import java.lang.reflect.Method;
 import java.util.Collection;
 import java.util.Map;
 
-public class ObjectUtils {
+public final class ObjectUtils {
     private ObjectUtils() {
     }
 
     public static boolean isBlank(Object o) {
-        return o == null || o instanceof String && !StringUtils.hasLength((String) o) || o instanceof Collection && ((Collection) o).isEmpty() || o instanceof Map && ((Map) o).isEmpty() || o.getClass().isArray() && Array.getLength(o) == 0;
+        return o == null || o instanceof String && StringUtil.isBlank((String)o) || o instanceof Collection && ((Collection)o).isEmpty() || o instanceof Map && ((Map)o).isEmpty() || o.getClass().isArray() && Array.getLength(o) == 0;
     }
 
     public static boolean isNotBlank(Object o) {
         return !isBlank(o);
     }
-
     public static <T> T getFieldValue(Object o, String fieldName) throws InvocationTargetException, IllegalAccessException {
         String methodName = ClassUtils.getterName(fieldName, false);
         Method method = null;
