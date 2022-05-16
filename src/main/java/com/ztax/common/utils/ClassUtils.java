@@ -185,4 +185,17 @@ public class ClassUtils {
         pubColumnSetter.add("setDeleteFlag");
         pubColumnSetter.add("setDeleteTime");
     }
+
+    public static String buildGetMethodName(String fieldName, Class<?> cls) {
+        if (!Boolean.TYPE.equals(cls) && !Boolean.class.equals(cls)) {
+            return "get" + getFieldNameOfMethod(fieldName);
+        } else {
+            return fieldName.startsWith("is") ? fieldName : "is" + getFieldNameOfMethod(fieldName);
+        }
+    }
+
+    private static String getFieldNameOfMethod(String fieldName) {
+        char c = fieldName.charAt(1);
+        return c >= 'A' && c <= 'Z' ? fieldName : Character.toUpperCase(fieldName.charAt(0)) + fieldName.substring(1);
+    }
 }
