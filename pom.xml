@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.ztax</groupId>
     <artifactId>cloud-common</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.6</version>
     <name>common</name>
     <description>Common project for ztax cloud project</description>
     <properties>
